@@ -1,6 +1,5 @@
-export const createState = ({ context, canvas }) => ({
+export const createState = (context) => ({
     context,
-    canvas,
     background: {
         color: '#595347',
         x: 0,

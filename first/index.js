@@ -1,10 +1,9 @@
-const canvas = document.querySelector('canvas');
-const context = canvas.getContext('2d');
+const context = document.querySelector('canvas')?.getContext('2d');
 
 const resize = () => {
     // Ensure canvas logical size matches display size
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    context.canvas.width = window.innerWidth;
+    context.canvas.height = window.innerHeight;
 };
 
 resize(); // Once on init and on every resize
@@ -20,7 +19,7 @@ import { update } from './update.js';
 import { draw } from './draw.js';
 import { createState } from './state.js';
 
-const state = createState({ context, canvas });
+const state = createState(context);
 
 window.state = state;
 

@@ -5,12 +5,12 @@ export const draw = (state) => {
     drawRectangle(state.ball, state);
 };
 
-const drawRectangle = ({ color, x, y, width, height }, state) => {
+const drawRectangle = ({ color, x, y, width, height }, { context: { canvas } }) => {
     state.context.fillStyle = color;
     state.context.fillRect(
-        state.canvas.width * x,
-        state.canvas.height * y,
-        state.canvas.width * width,
-        state.canvas.height * height,
+        canvas.width * x,
+        canvas.height * y,
+        canvas.width * width,
+        canvas.height * height,
     );
 };
